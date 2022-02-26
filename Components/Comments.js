@@ -1,4 +1,4 @@
-import { Image,StyleSheet, Text } from "react-native";
+import { Image, Text } from "react-native";
 import {Button,Box,NativeBaseProvider,AspectRatio,Center,Stack,HStack,Heading,} from "native-base";
 
 export const Comments =({ item, navigation })=> {
@@ -51,7 +51,7 @@ export const Comments =({ item, navigation })=> {
                 px="3"
                 py="1.5"
               >
-                PHOTO
+                PICTURE
               </Center>
             </Box>
 
@@ -62,7 +62,7 @@ export const Comments =({ item, navigation })=> {
                 </Text>
               </Stack>
               <Text >
-                <Heading fontSize="md">Body: </Heading> {item.body}
+                <Heading fontSize="md">CommentBody: </Heading> {item.body}
               </Text>
               <HStack
                 alignItems="center"

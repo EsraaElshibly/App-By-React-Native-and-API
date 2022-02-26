@@ -17,9 +17,7 @@ export default function App(){
        <Tap.Navigator >
         <Tap.Screen name='Home' component={Home}/>
         <Tap.Screen name='ShowComments' component={ShowComments}/>
-
-      <Tap.Screen name='details' component={Details}/>
-        {/* <Tap.Screen name='Comments' component={Comments} /> */}
+        <Tap.Screen name='details' component={Details}/>
        </Tap.Navigator>
      </NavigationContainer>
    </NativeBaseProvider>

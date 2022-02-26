@@ -1,33 +1,23 @@
-import { StyleSheet,Image } from "react-native";
+import { Image } from "react-native";
 import { Text,Button,Box,NativeBaseProvider } from "native-base";
+import { styles } from './style';
 
 export const Home =(props) =>{
     console.log(props)
    return(
     <NativeBaseProvider>
          <Box style={styles.text}>
-         <Text style={{fontSize:22}}>Hello From Home Page</Text>
+         <Text style={{fontSize:22}}>Second Application Says Hello..!!</Text>
 
-             <Image source={require('../assets/a0042858efa4790bfdb8bd1ede9cf9ee.jpg')}
-              style={{width:420,height:550,marginTop:20}}
+             <Image source={require('../assets/bright.png')}
+              style={styles.image}
              />
            <Button onPress={() => props.navigation.navigate({name:'ShowComments'})}
-            style={{marginTop:50,backgroundColor:"purple"}}>Let`s start </Button>
+            style={styles.btn}> Start </Button>
          </Box>
       
     </NativeBaseProvider>
    )
 }
-const styles = StyleSheet.create({
-    text: {
-     marginTop:30,
-     height:700,
-     alignItems:'center',
-     fontSize:30
-  
-    }
-   
-  });
-
   
 export default Home;

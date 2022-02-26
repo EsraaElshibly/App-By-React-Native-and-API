@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { Box,FlatList, VStack,Heading } from "native-base";
 import { getComments } from "../Actions/actions";
 import Comments from "./Comments";
+import { styles } from './style';
 
 
 export const ShowComments =(props) =>{
@@ -18,17 +19,14 @@ export const ShowComments =(props) =>{
   return (
     <VStack>
       <Heading fontSize="xl" p="4" pb="3">
-      Comments
+      Comments List
       </Heading>
       <FlatList
         data={state.list}
         renderItem={({ item }) => <Comments item={item} {...props} />}
         ItemSeparatorComponent={() => (
           <Box
-            style={{
-              margin: 2,
-             
-            }}
+            style={styles.box}
           ></Box>
         )}
       />
