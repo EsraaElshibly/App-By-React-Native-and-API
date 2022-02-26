@@ -9,14 +9,20 @@ export const styles = StyleSheet.create({
     },
 
     headerPost: {
-        fontSize : 20 ,
+        fontSize : 23 ,
         padding: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
+    },
+
+    postPage: {
+        alignItems : "center",
+        backgroundColor : '#042042'
     },
 
     image: {
         width:420,
-        height:550,
+        height:470,
         marginTop:20
     },
 
@@ -37,6 +43,13 @@ export const styles = StyleSheet.create({
 
     box: {
         marginBottom: 20,
+    },
+
+    postBtn: {
+        backgroundColor : "#5784BA",
+        color: "warmGray.50",
+        fontWeight: "700",
+        marginLeft: '60%'
     }
 
 

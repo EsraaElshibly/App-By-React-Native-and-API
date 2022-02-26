@@ -1,5 +1,6 @@
 import { Image, Text } from "react-native";
 import {Button,Box,NativeBaseProvider,AspectRatio,Center,Stack,HStack,Heading,} from "native-base";
+import { styles } from './style';
 
 export const Posts =({ item, navigation })=> {
   
@@ -71,7 +72,7 @@ export const Posts =({ item, navigation })=> {
                  
                   <Button 
                     onPress={() => {
-                        console.log("press");
+                        console.log("Show Details");
                         navigation.navigate({
                           name: "details",
                           params: {
@@ -79,16 +80,9 @@ export const Posts =({ item, navigation })=> {
                           },
                         });
                       }}
-                      bg="#5784BA"
-                     
-                      _text={{
-                        color: "warmGray.50",
-                        fontWeight: "700",
-                        
-                      }}
-                     
+                      style= {styles.postBtn}
                   >
-                   Show Details
+                   More Details
                   </Button>
                 </HStack>
               </HStack>

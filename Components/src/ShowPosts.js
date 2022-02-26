@@ -17,7 +17,7 @@ export const ShowPosts =(props) =>{
   }, []);
 
   return (
-    <VStack>
+    <VStack style={styles.postPage}>
       <Heading style={styles.headerPost}>
       Posts List
       </Heading>
