@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
 
     postBtn: {
         backgroundColor : "#5784BA",
-        color: "warmGray.50",
+        color: "gray",
         fontWeight: "700",
         marginLeft: '60%'
     }
