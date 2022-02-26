@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
         backgroundColor : "#5784BA",
         color: "gray",
         fontWeight: "700",
-        marginLeft: '60%'
+        marginLeft: '38%'
     }
 
 
