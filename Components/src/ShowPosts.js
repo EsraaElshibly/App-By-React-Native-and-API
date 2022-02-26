@@ -1,29 +1,29 @@
-import { CommentContext } from '../context'
+import { PostContext } from '../../context'
 import { useContext, useEffect } from "react";
 import { Box,FlatList, VStack,Heading } from "native-base";
-import { getComments } from "../Actions/actions";
-import Comments from "./Comments";
+import { getPosts } from "../../Actions/actions";
+import Posts from "./Posts";
 import { styles } from './style';
 
 
-export const ShowComments =(props) =>{
-  const { state, dispatch } = useContext(CommentContext);
+export const ShowPosts =(props) =>{
+  const { state, dispatch } = useContext(PostContext);
   console.log(state);
   useEffect(() => {
     const resolveAction = async () => {
-      dispatch(await getComments());
+      dispatch(await getPosts());
     };
     resolveAction();
   }, []);
 
   return (
     <VStack>
-      <Heading fontSize="xl" p="4" pb="3">
-      Comments List
+      <Heading style={styles.headerPost}>
+      Posts List
       </Heading>
       <FlatList
         data={state.list}
-        renderItem={({ item }) => <Comments item={item} {...props} />}
+        renderItem={({ item }) => <Posts item={item} {...props} />}
         ItemSeparatorComponent={() => (
           <Box
             style={styles.box}
@@ -34,4 +34,4 @@ export const ShowComments =(props) =>{
   );
 }
 
-export default ShowComments;
+export default ShowPosts;

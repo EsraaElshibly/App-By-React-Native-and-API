@@ -1,11 +1,11 @@
 export const reducer =(state={},action)=> {
 
     switch(action.type){
-        case 'COMMENTS_LIST':{
+        case 'POSTS_LIST':{
             return {...state,list:action.payload}
         }
 
-        case'COMMENTS_DETAILS':{
+        case'POSTS_DETAILS':{
             return{...state, details:action.payload}
         }
 

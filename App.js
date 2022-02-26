@@ -1,11 +1,10 @@
 import {NativeBaseProvider} from 'native-base';
-import { StyleSheet} from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'; 
 import { NavigationContainer } from '@react-navigation/native';
-import Home from './Components/Home';
+import Home from './Components/src/Home';
 import CommentsProvider from './context';
-import ShowComments from './Components/ShowCommt';
-import Details from './Components/Details';
+import ShowPosts from './Components/src/ShowPosts';
+import Details from './Components/src/Details';
 
 const Tap = createMaterialTopTabNavigator();
 export default function App(){
@@ -14,9 +13,9 @@ export default function App(){
   <CommentsProvider>
     <NativeBaseProvider>
      <NavigationContainer>
-       <Tap.Navigator >
+       <Tap.Navigator>
         <Tap.Screen name='Home' component={Home}/>
-        <Tap.Screen name='ShowComments' component={ShowComments}/>
+        <Tap.Screen name='ShowPosts' component={ShowPosts}/>
         <Tap.Screen name='details' component={Details}/>
        </Tap.Navigator>
      </NavigationContainer>
@@ -24,13 +23,3 @@ export default function App(){
   </CommentsProvider>
   );
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightblue',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

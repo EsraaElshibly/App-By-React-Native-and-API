@@ -1,8 +1,8 @@
 import { createContext, useReducer } from "react"
 import { reducer } from "../Reducer/reducer";
 
-export const CommentContext = createContext();
-export const CommentsProvider =({ children })=> {
+export const PostContext = createContext();
+export const PostsProvider =({ children })=> {
 
     const [state,dispatch] = useReducer(reducer, {
         list:[],
@@ -11,10 +11,10 @@ export const CommentsProvider =({ children })=> {
     );
  
     return(
-        <CommentContext.Provider value={{state,dispatch}}>
+        <PostContext.Provider value={{state,dispatch}}>
             {children}
-        </CommentContext.Provider>
+        </PostContext.Provider>
     );
 };
 
-export default CommentsProvider;
+export default PostsProvider;

@@ -8,16 +8,16 @@ import {
   Stack,
   Heading,
 } from "native-base";
-import { CommentContext } from "../context";
-import { getCommtDetails , clearDetails} from "../Actions/actions";
+import { PostContext } from "../../context";
+import { getPosts , clearDetails} from "../../Actions/actions";
 
 export const Details =({ route })=> {
 
-  const { state, dispatch } = useContext(CommentContext);
+  const { state, dispatch } = useContext(PostContext);
   console.log(route);
   useEffect(() => {
     const resolveAction = async () => {
-      dispatch(await getCommtDetails(route.params.id));
+      dispatch(await getPosts(route.params.id));
     };
     resolveAction();
     return () => {
@@ -48,12 +48,6 @@ export const Details =({ route })=> {
           >
             <Box>
               <AspectRatio w="100%" ratio={16 / 9}>
-                {/* <Image
-                  source={{
-                    uri: state.details.image,
-                  }}
-                  alt="image"
-                /> */}
               </AspectRatio>
               <Center
                 bg="violet.500"
@@ -77,7 +71,7 @@ export const Details =({ route })=> {
             <Stack p="4" space={3}>
               <Stack space={2}>
                 <Heading size="md" ml="-1">
-                  {state.details.body}.
+                  {state.details.id}.
                 </Heading>
 
                 <Text
@@ -86,7 +80,7 @@ export const Details =({ route })=> {
                   ml="-0.5"
                   mt="-1"
                 >
-                   <Heading style={{color:"#54106a"}}>Name: </Heading>{state.details.name}
+                   <Heading style={{color:"#54106a"}}>Title: </Heading>{state.details.title}
                 </Text>
                 <Text
                   fontSize="xs"
@@ -94,7 +88,7 @@ export const Details =({ route })=> {
                   ml="-0.5"
                   mt="-1"
                 >
-                   <Heading style={{color:"#54106a"}}>Email: </Heading>{state.details.email}
+                   <Heading style={{color:"#54106a"}}>POST: </Heading>{state.details.body}
                 </Text>
               </Stack>
             

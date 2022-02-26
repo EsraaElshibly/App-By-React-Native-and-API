@@ -1,33 +1,33 @@
 import axios from "axios";
 
-const baseURL = 'https://jsonplaceholder.typicode.com/comments';
+const baseURL = 'https://jsonplaceholder.typicode.com/posts';
 
-export const  getComments = async ()=>{
-    let comments = []
+export const  getPosts = async ()=>{
+    let posts = []
     try {
         const response = await axios.get(baseURL)
-        comments = response.data;
+        posts = response.data;
     } catch (error) {
         console.log(error)
     }
     return {
-        type:'COMMENTS_LIST',
-        payload:comments 
+        type:'POSTS_LIST',
+        payload:posts 
     }
 
 }
 
-export const getCommtDetails = async (id)=>{
-    let comment = {}
+export const getPostDetails = async (id)=>{
+    let post = {}
     try {
         const response = await axios.get(`${baseURL}/${id}`)
-        comment = response.data;
+        post = response.data;
     } catch (error) {
         console.log(error)
     }
     return {
-        type:'COMMENTS_DETAILS',
-        payload:comment 
+        type:'POSTS_DETAILS',
+        payload:post 
     }
 }
 

@@ -7,12 +7,12 @@ export const Home =(props) =>{
    return(
     <NativeBaseProvider>
          <Box style={styles.text}>
-         <Text style={{fontSize:22}}>Second Application Says Hello..!!</Text>
+         <Text style={{fontSize:22}}>POST Application Says Hello..!!</Text>
 
-             <Image source={require('../assets/bright.png')}
+             <Image source={require('../../assets/bright.png')}
               style={styles.image}
              />
-           <Button onPress={() => props.navigation.navigate({name:'ShowComments'})}
+           <Button onPress={() => props.navigation.navigate({name:'ShowPosts'})}
             style={styles.btn}> Start </Button>
          </Box>
       

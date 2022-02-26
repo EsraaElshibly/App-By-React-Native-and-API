@@ -1,7 +1,7 @@
 import { Image, Text } from "react-native";
 import {Button,Box,NativeBaseProvider,AspectRatio,Center,Stack,HStack,Heading,} from "native-base";
 
-export const Comments =({ item, navigation })=> {
+export const Posts =({ item, navigation })=> {
   
   if (item.id) {
     return (
@@ -31,16 +31,14 @@ export const Comments =({ item, navigation })=> {
               <AspectRatio w="100%" ratio={16 / 9}>
                 <Image
                   source={{
-                    uri: 'https://picsum.photos/seed/picsum/200/300',
+                    uri: 'https://images.unsplash.com/photo-1645103008066-7cabc7512f71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
                   }}
                   alt="image"
                 />
               </AspectRatio>
               <Center
-                bg="violet.500"
-                _dark={{
-                  bg: "violet.400",
-                }}
+                bg="#5784BA"
+                
                 _text={{
                   color: "warmGray.50",
                   fontWeight: "700",
@@ -51,18 +49,18 @@ export const Comments =({ item, navigation })=> {
                 px="3"
                 py="1.5"
               >
-                PICTURE
+                POST PIC
               </Center>
             </Box>
 
             <Stack p="4" space={3}>
               <Stack space={2}>
                 <Text size="md" ml="-1" >
-                  <Heading fontSize="md">Name:</Heading> {item.name}
+                  <Heading fontSize="md">Title:</Heading> {item.title}
                 </Text>
               </Stack>
               <Text >
-                <Heading fontSize="md">CommentBody: </Heading> {item.body}
+                <Heading fontSize="md">Post: </Heading> {item.body}
               </Text>
               <HStack
                 alignItems="center"
@@ -81,11 +79,8 @@ export const Comments =({ item, navigation })=> {
                           },
                         });
                       }}
-                      bg="violet.500"
-                      _dark={{
-                        bg: "violet.400",
-            
-                      }}
+                      bg="#5784BA"
+                     
                       _text={{
                         color: "warmGray.50",
                         fontWeight: "700",
@@ -107,4 +102,4 @@ export const Comments =({ item, navigation })=> {
   }
 }
 
-export default Comments;
+export default Posts;
